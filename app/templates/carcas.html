@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% if title %}
+    <title>{{title}}</title>
+    {% else %}
+    <title>Онлайн магазин</title>
+    {% endif %}
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+        </div>
+
+        <div id="navbar">
+            <button class="navbar_button">
+                <p>На главную</p>
+            </button>
+            <button class="navbar_button">
+                <p>Меню</p>
+            </button>
+            <button class="navbar_button">
+                <p>Список товаров</p>
+            </button>
+            <button class="navbar_button" style="float: right; margin-right: 20px">
+                <p>Корзина</p>
+            </button>
+        </div>
+
+        <div id="content">
+        </div>
+    </div>
+
+    <div id="footer">
+        <div id="footer_block">
+            <p style="color: black"><b>FLASK WEB-SITE</b></p>
+        </div>
+    </div>
+</body>
+</html>
