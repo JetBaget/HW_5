@@ -1,0 +1,34 @@
+{% extends "carcas.html" %}
+{% block navbar %}
+{% include "product_navbar.html" %}
+{{ super() }}
+{% endblock %}
+{% block content %}
+<div class="item">
+    <h3>{{header}}</h3>
+    <div class="item__image">
+        {% if img_path %}
+        <img src={{img_path}}>
+        {% else %}
+        <p>Нет изображения</p>
+        {% endif %}
+    </div>
+    <div class="item__params">
+        {% if params %}
+        {% for param in params %}
+            <p>param</p>
+        {% endfor %}
+        {% else %}
+        <p>Для этого товара пока нет характеристик</p>
+        {% endif %}
+    </div>
+    <div class="item__description">
+        {% if desc %}
+        <p>desc</p>
+        {% else %}
+        <p>Для этого товара пока нет описания</p>
+        {% endif %}
+    </div>
+</div>
+{{ super() }}
+{% endblock %}
