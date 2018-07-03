@@ -1,2 +1,4 @@
 *.pyc
-__pycache__/
+*.db
+*__pycache__
+docker/db/*

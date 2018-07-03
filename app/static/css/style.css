@@ -10,6 +10,8 @@ body {
     background: url("../../static/img/back.jpg") no-repeat center center fixed;
     background-size: cover;
     box-sizing: border-box;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    font-size-adjust: 0.6;
 }
 
 html, body {
@@ -17,27 +19,27 @@ html, body {
 }
 
 #wrap {
-    background-color: dimgrey;
+    background: rgba(105, 105, 105, 0.3);
     min-height: 100%;
     width: 80%;
     margin: 0 auto;
-    opacity: 0.8;
     position: relative;
-    padding-bottom: 40px;
+    padding-bottom: 60px;
     box-sizing: border-box;
 }
 
 #navbar {
-    height: 35px;
+    height: 55px;
     width: 100%;
-    background: grey;
-    margin-bottom: 5px;
+    background: rgba(70, 70, 70, 0.2);
 }
 
 #navbar_button_group {
     height: 100%;
-    width: 100%;
-    margin: 0 40px;
+    width: fit-content;
+    max-width: 100%;
+    margin: 0 10px;
+    padding-top: 10px;
 }
 
 .navbar_button {
@@ -50,7 +52,7 @@ html, body {
     text-shadow: 0 -1px 2px rgba(0, 0, 0, .2);
     padding: .5em 1em;
     outline: none;
-    background: linear-gradient(rgb(110, 112, 120), rgb(81, 81, 86)) rgb(110, 112, 120);
+    background: linear-gradient(rgba(110, 112, 120, 0.7), rgba(81, 81, 86, 0.7)) rgba(110, 112, 120, 0.7);
     box-shadow: 0 1px rgba(255, 255, 255, .2) inset,
     0 3px 5px rgba(0, 1, 6, .5),
     0 0 1px 1px rgba(0, 1, 6, .2);
@@ -75,20 +77,18 @@ html, body {
 
 #header {
     width: 100%;
-    margin-bottom: 10px;
 }
 
 #footer {
     width: 80%;
-    margin: -40px auto auto;
+    margin: -60px auto auto;
     bottom: 0;
     position: relative;
 }
 
 #header, #footer {
-    height: 40px;
-    background: black;
-    opacity: 0.4;
+    height: 60px;
+    background: rgba(0, 0, 0, 0.5);
 }
 
 #footer_block {
@@ -97,12 +97,67 @@ html, body {
     top: 25%;
     text-align: center;
     position: relative;
+    line-height: 30px;
 }
 
 #content {
     height: fit-content;
-    min-height: 800px;
-    background: lightgrey;
-    margin: 10px 40px auto;
+    min-height: 700px;
+    /*background: rgba(211, 211, 211, 0.3);*/
+    margin: 0 60px auto;
     box-sizing: border-box;
+    padding: 10px;
+}
+
+.item {
+    width: 95%;
+    height: fit-content;
+    min-height: 200px;
+    background: rgba(250, 250, 250, 0.4);
+    margin: 15px auto;
+    text-align: left;
+    overflow: hidden;
+    display: block;
+    border-radius: 5px;
+}
+
+.item__header {
+    background: rgba(100, 100, 100, 0.7);
+    height: 40px;
+}
+
+.item__header > h2 {
+    color: rgb(230, 230, 230);
+    line-height: 40px;
+    padding-left: 10px;
+}
+
+.item__image > img {
+    max-width: 100%;
+    border: rgba(20, 20, 240, 0.2) 2px solid;
+}
+
+.item__image {
+    padding: 10px;
+    max-width: 30%;
+    float: left;
+}
+
+.item__params {
+    width: 20%;
+}
+
+.item__description {
+    width: 40%;
+}
+
+.item__params, .item__description {
+    height: fit-content;
+    padding: 10px;
+    margin: 10px 10px auto;
+    background: rgba(250, 250, 250, 0.8);
+    float: right;
+    display: inline-block;
+    border: rgba(20, 20, 240, 0.3) 1px solid;
+    box-shadow: 0 0 1px rgba(0, 0, 0, .7) inset;
 }

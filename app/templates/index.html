@@ -1,31 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    {% if title %}
-    <title>{{title}}</title>
+{% extends "carcas.html" %}
+{% block navbar %}
+{% include "index_navbar.html" %}
+{{ super() }}
+{% endblock %}
+{% block content %}
+    {% if products %}
+        {% for product in products %}
+            {% include "item.html" %}
+        {% endfor %}
     {% else %}
-    <title>Онлайн магазин</title>
+        <p>Нет товаров</p>
     {% endif %}
-    <link rel="stylesheet" type="text/css" href="../static/css/style.css">
-</head>
-<body>
-    <div id="wrap">
-        <div id="header">
-        </div>
-
-        <div id="navbar">
-           {% include 'product_navbar.html' %}
-        </div>
-
-        <div id="content">
-        </div>
-    </div>
-
-    <div id="footer">
-        <div id="footer_block">
-            <p style="color: black"><b>FLASK WEB-SITE</b></p>
-        </div>
-    </div>
-</body>
-</html>
+{{ super() }}
+{% endblock %}

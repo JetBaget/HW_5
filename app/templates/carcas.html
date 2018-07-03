@@ -12,30 +12,24 @@
 <body>
     <div id="wrap">
         <div id="header">
+            {% block header %}
+            {% endblock %}
         </div>
 
         <div id="navbar">
-            <button class="navbar_button">
-                <p>На главную</p>
-            </button>
-            <button class="navbar_button">
-                <p>Меню</p>
-            </button>
-            <button class="navbar_button">
-                <p>Список товаров</p>
-            </button>
-            <button class="navbar_button" style="float: right; margin-right: 20px">
-                <p>Корзина</p>
-            </button>
+            {% block navbar %}
+            {% endblock %}
         </div>
 
         <div id="content">
+            {% block content %}
+            {% endblock %}
         </div>
     </div>
 
     <div id="footer">
         <div id="footer_block">
-            <p style="color: black"><b>FLASK WEB-SITE</b></p>
+            <p style="color: rgba(255, 255, 255, 0.6)"><b>FLASK WEB-SITE</b></p>
         </div>
     </div>
 </body>

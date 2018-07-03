@@ -4,31 +4,41 @@
 {{ super() }}
 {% endblock %}
 {% block content %}
+{% for prod in products %}
 <div class="item">
-    <h3>{{header}}</h3>
-    <div class="item__image">
-        {% if img_path %}
-        <img src={{img_path}}>
-        {% else %}
-        <p>Нет изображения</p>
-        {% endif %}
+    <div class="item__header">
+        <h2>{{prod['header']}}</h2>
     </div>
-    <div class="item__params">
-        {% if params %}
-        {% for param in params %}
-            <p>param</p>
-        {% endfor %}
-        {% else %}
-        <p>Для этого товара пока нет характеристик</p>
-        {% endif %}
-    </div>
-    <div class="item__description">
-        {% if desc %}
-        <p>desc</p>
-        {% else %}
-        <p>Для этого товара пока нет описания</p>
-        {% endif %}
+    <div class="item__body">
+        <div class="item__image">
+            {% if prod['img_path'] is not none %}
+            <img src={{prod['img_path']}}>
+            {% else %}
+            <p>Нет изображения</p>
+            {% endif %}
+        </div>
+        <div class="item__params">
+            <h3>Характеристики</h3>
+            <br>
+            {% if prod['params'] is not none %}
+            {% for param in prod['params'] %}
+            <p>{{param}}</p>
+            {% endfor %}
+            {% else %}
+            <p>Для этого товара пока нет характеристик</p>
+            {% endif %}
+        </div>
+        <div class="item__description">
+            <h3>Описание</h3>
+            <br>
+            {% if prod['desc'] is not none %}
+            <p>{{prod['desc']}}</p>
+            {% else %}
+            <p>Для этого товара пока нет описания</p>
+            {% endif %}
+        </div>
     </div>
 </div>
+{% endfor %}
 {{ super() }}
 {% endblock %}

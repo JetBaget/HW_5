@@ -1,47 +1,22 @@
-from flask import render_template, flash, redirect
+from flask import render_template
 from app import app
-from app.forms import LoginForm
 
-
-# функция представления index опущена для краткости
-
-
-@app.route('/login', methods=['GET', 'POST'])
-def login():
-    form = LoginForm()
-    if form.validate_on_submit():
-        flash('Login requested for OpenID="' + form.openid.data + '", remember_me=' + str(form.remember_me.data))
-        return redirect('/index')
-    return render_template('login.html',
-                           title='Sign In',
-                           form=form,
-                           providers=app.config['OPENID_PROVIDERS'])
-
-
-# @app.route('/')
-# @app.route('/index')
-# def index():
-#     user = {'nickname': 'Miguel'}  # выдуманный пользователь
-#     posts = [
-#         {
-#             'author': {'nickname': 'John'},
-#             'body': 'Beautiful day in Portland!'
-#         },
-#         {
-#             'author': {'nickname': 'Susan'},
-#             'body': 'The Avengers movie was so cool!'
-#         }
-#     ]
-#     return render_template('index.html',
-#                            title='Home',
-#                            user=user,
-#                            posts=posts)
 
 @app.route('/')
+@app.route('/main/')
 def main():
     return render_template('index.html', title='Главная')
 
 
-if __name__ == "__main__":
-    app.debug = True
-    app.run()
+@app.route('/products/', methods=['GET', 'POST'])
+def product():
+    prod_set = [{'header': 'IPhone 7 (100500Гб, полный фарш)',
+                 'params': ['Объем памяти: 64Гб', 'Цвет: Черный', 'Диагональ экрана: 5.5`'],
+                 'img_path': '/static/img/iphone7.jpg',
+                 'desc': 'Некуда девать лишние деньги? Тогда это лучший выбор!'},
+                {'header': 'Macbook Air 2018 (16Гб оперативы)',
+                 'params': ['Объем оперативной памяти: 16Гб', 'Жёсткий диск: 500Гб', 'Цвет: Серебристый', 'Диагональ экрана: 17`'],
+                 'img_path': '/static/img/macbook.jpg',
+                 'desc': 'Охурменный ноутбук за нехилое баблище'}]
+    return render_template('item.html', products=prod_set)
+
