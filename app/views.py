@@ -19,4 +19,3 @@ def product():
                  'img_path': '/static/img/macbook.jpg',
                  'desc': 'Охурменный ноутбук за нехилое баблище'}]
     return render_template('item.html', products=prod_set)
-
