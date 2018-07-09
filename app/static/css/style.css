@@ -93,7 +93,6 @@ html, body {
 
 #footer_block {
     height: 30px;
-    width: fit-content;
     top: 25%;
     text-align: center;
     position: relative;
@@ -126,8 +125,15 @@ html, body {
     height: 40px;
 }
 
+.item__body {
+    height: fit-content;
+    min-height: 100%;
+    background: rgba(250, 250, 250, 0.6);
+    margin: 5px auto;
+}
+
 .item__header > h2 {
-    color: rgb(230, 230, 230);
+    color: rgb(220, 220, 220);
     line-height: 40px;
     padding-left: 10px;
 }
@@ -148,16 +154,33 @@ html, body {
 }
 
 .item__description {
-    width: 40%;
+    width: 30%;
 }
 
-.item__params, .item__description {
+.item_image_ext {
+    margin: 0 auto;
+    max-width: 50%;
+    float: left;
+}
+
+.item_params_ext {
+    width: 40%;
+    height: fit-content;
+}
+
+.item__description_ext {
+    margin-left: 10px;
+    width: 50%;
+    height: fit-content;
+}
+
+.item__params, .item__description,
+.item__params_ext, .item__description_ext {
     height: fit-content;
     padding: 10px;
     margin: 10px 10px auto;
     background: rgba(250, 250, 250, 0.8);
-    float: right;
-    display: inline-block;
+    float: left;
     border: rgba(20, 20, 240, 0.3) 1px solid;
     box-shadow: 0 0 1px rgba(0, 0, 0, .7) inset;
 }

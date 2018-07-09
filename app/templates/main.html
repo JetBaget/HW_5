@@ -1,8 +1,10 @@
 {% extends "carcas.html" %}
 {% block navbar %}
-{% include "product_navbar.html" %}
 {{ super() }}
 {% endblock %}
 {% block content %}
+    <a href="/products/">
+        <h1 style="text-align: center; margin-top: 30%">FLASK SHOP</h1>
+    </a>
 {{ super() }}
 {% endblock %}
