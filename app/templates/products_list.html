@@ -7,36 +7,47 @@
 {% for prod in products %}
 <div class="item">
     <div class="item__header">
-        <h2>{{prod['header']}}</h2>
+        <h2>{{prod.title}}</h2>
     </div>
-    <div class="item__body">
-        <div class="item__image">
-            {% if prod['img_path'] is not none %}
-            <img src={{prod['img_path']}}>
-            {% else %}
-            <p>Нет изображения</p>
-            {% endif %}
-        </div>
-        <div class="item__params">
-            <h3>Характеристики</h3>
-            <br>
-            {% if prod['params'] is not none %}
-            {% for param in prod['params'] %}
-            <p>{{param}}</p>
+    <div class="item__image">
+        {% if prod.img_path is not none %}
+        <img src={{prod.img_path}}>
+        {% else %}
+        <p>Нет изображения</p>
+        {% endif %}
+    </div>
+    <div class="item__params">
+        <h3>Характеристики</h3>
+        <br>
+        {% if prod.params is not none %}
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Параметр</th>
+                <th scope="col" align="right">Значение</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for param, value in prod.params.items() %}
+            <tr>
+                <td align="left">{{param}}</td>
+                <td align="right">{{value}}</td>
+            </tr>
             {% endfor %}
-            {% else %}
-            <p>Для этого товара пока нет характеристик</p>
-            {% endif %}
-        </div>
-        <div class="item__description">
-            <h3>Описание</h3>
-            <br>
-            {% if prod['desc'] is not none %}
-            <p>{{prod['desc']}}</p>
-            {% else %}
-            <p>Для этого товара пока нет описания</p>
-            {% endif %}
-        </div>
+            </tbody>
+        </table>
+        {% else %}
+        <p>Для этого товара пока нет характеристик</p>
+        {% endif %}
+    </div>
+    <div class="item__description">
+        <h3>Описание</h3>
+        <br>
+        {% if prod.description is not none %}
+        <p>{{prod.description}}</p>
+        {% else %}
+        <p>Для этого товара пока нет описания</p>
+        {% endif %}
     </div>
 </div>
 {% endfor %}

@@ -12,8 +12,6 @@ services:
       - db
     ports:
       - 80:8080
-    environment:
-      DATABASE_URL: postgresql://admin:12345678@db/otus_db
     command: python3 flask_app.py
 
   db:
